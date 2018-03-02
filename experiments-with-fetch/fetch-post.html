@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fetch Post</title>
+</head>
+<body>
+  <div id="data">
+    <input type="text" id="name" placeholder="enter your name!">
+    <input type="submit" onclick="post()">
+  </div>
+  <script>
+    function post(){
+      let entered_name = document.querySelector('#name').value;
+      let data = {name: entered_name};
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({
+          'Content-type': 'application/json'
+        })
+      })
+      .then(res=>res.json())
+      .catch(err=>console.error('Error:', err))
+      .then(res=>console.log('Success:', res))
+    }
+  </script>
+</body>
+</html>

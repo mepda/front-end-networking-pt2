@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fetch Clone</title>
+</head>
+<body>
+  <div id="data">
+  </div>
+  <div id="data2"></div>
+
+
+
+  <script>
+  let word = "hello";
+  fetch('https://mashape-community-urban-dictionary.p.mashape.com/define?term='+word, {
+    headers: new Headers({
+      'X-Mashape-Key': 'your-key-here'
+    })
+  }).then(function(res){
+    var res2 = res.clone()
+    res.json().then(function(data){
+      document.querySelector('#data').innerText = data.list[0].definition;
+    })
+    res2.json().then(function(data){
+      document.querySelector('#data2').innerText = data.list[0].definition;
+    })
+  })
+
+  </script>
+</body>
+</html>

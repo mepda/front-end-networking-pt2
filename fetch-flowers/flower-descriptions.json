@@ -1,0 +1,14 @@
+{
+"dandelion":[
+  { "description": "a yellow flower with  many pedals",
+      "colors": "yellow, green"}
+    ],
+"lady-slipper":[
+  {"description": "a pink flower resembling an orchid",
+    "colors": "pink, white"}
+    ],
+"carnation":[
+  {"description": "a flower native to the Mediterranean",
+    "colors": "generally lavendar, pink, or purple"}
+    ]
+}
