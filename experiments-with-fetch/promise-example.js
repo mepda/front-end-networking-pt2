@@ -1,26 +1,18 @@
-let study = function(){
+function a(){
+  console.log("Study");
   return new Promise(function(resolve, reject){
-    console.log("studying...");
-    resolve("studied a lot");
+    setTimeout(function(){
+      resolve()
+    }, 2000);
   })
 }
 
-let jobHunt = function(message){
-  return new Promise(function(resolve, reject){
-    console.log("looking through classifieds...");
-    resolve("found something interesting");
-  })
+function b(){
+  console.log("Job hunt");
 }
 
-let interview = function(message){
-  return new Promise(function(resolve, reject){
-    console.log("interviewing with potential employer...");
-    resolve("got hired");
-  })
+function c(){
+  console.log("Interview");
 }
 
-study().then(function(result){
-  jobHunt(result);
-}).then(function(result){
-  interview(result);
-})
+a().then(b).then(c)
