@@ -16,3 +16,5 @@ function c(){
 }
 
 a().then(b).then(c)
+
+//important thing is that promises are thenable
